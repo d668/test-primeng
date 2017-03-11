@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {UIChart} from "primeng/primeng";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
-  data: any;
+  data:any;
+
+  update(chart:UIChart) {
+    this.data = {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+        {
+          label: 'First Dataset',
+          data: [1165, 9, 0, 0, 1, 1, 1]
+        }
+      ]
+    }
+    chart.refresh();
+  }
 
   constructor() {
     this.data = {
@@ -16,10 +30,6 @@ export class AppComponent {
         {
           label: 'First Dataset',
           data: [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-          label: 'Second Dataset',
-          data: [28, 48, 40, 19, 86, 27, 90]
         }
       ]
     }

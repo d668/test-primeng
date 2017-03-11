@@ -20,7 +20,18 @@ export class AppComponent {
         }
       ]
     }
-    chart.refresh();
+
+    //chart.refresh(); //doesn;t work
+
+    setTimeout(() => {
+      //chart.refresh(); //doesn;t work
+
+      //chart.ngOnDestroy(); //Works Ok
+      //chart.initChart();
+
+      chart.reinit(); //Works Ok
+      
+    }, 100);
   }
 
   constructor() {

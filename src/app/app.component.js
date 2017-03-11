@@ -29,7 +29,13 @@ var AppComponent = (function () {
                 }
             ]
         };
-        chart.refresh();
+        //chart.refresh(); //doesn;t work
+        setTimeout(function () {
+            //chart.refresh(); //doesn;t work
+            //chart.ngOnDestroy(); //Works Ok
+            //chart.initChart();
+            chart.reinit(); //Works Ok
+        }, 100);
     };
     AppComponent = __decorate([
         core_1.Component({
